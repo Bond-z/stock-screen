@@ -24,4 +24,4 @@ jobs:
       
       - name: Scan pull down candles
         run: |
-          python 3pull_back.py
+          python -m 3pull_back.py
