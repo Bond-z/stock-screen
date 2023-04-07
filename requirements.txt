@@ -1,5 +1,5 @@
 flask
-TA-Lib
+# TA-Lib
 pandas
 yfinance
 matplotlib
