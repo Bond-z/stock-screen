@@ -1,7 +1,9 @@
 name: hi there!!
 
 on: 
-  push: [dev]
+  push: 
+    branches:
+      - 'dev'
 
 jobs:
   hello:
