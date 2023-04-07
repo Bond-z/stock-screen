@@ -1,0 +1,12 @@
+flask
+TA-Lib
+pandas
+yfinance
+matplotlib
+pandas_datareader
+# pylab
+mplfinance
+# sci-kit 
+tensorflow
+numpy
+datetime
