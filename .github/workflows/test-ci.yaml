@@ -1,14 +1,27 @@
-name: hi there!!
+name: Stock scan
 
-on: 
-  push: 
-    branches:
-      - 'dev'
+on: [push]
 
 jobs:
-  hello:
+  build:
+
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["2.7"]
 
     steps:
-      - name: Hello Steps
-        run: echo "Hello world"
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install ruff pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      
+      - name: Scan pull down candles
+        run: |
+          python 3pull_back.py
