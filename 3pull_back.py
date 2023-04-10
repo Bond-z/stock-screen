@@ -91,7 +91,7 @@ class Doji:
         # df1 = df.assign(Change = change)
         df2 = df.assign(Price = current)
         df3 = df2.assign(Volume = volume)
-        df3.to_csv('./daily_stock/pull_back/pull_back{end}'+'.csv')
+        df3.to_csv('./daily_stock/pull_back/pull_back.csv')
 
         print(df3)
         print(stock)
